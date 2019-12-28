@@ -1,1 +1,1 @@
-<h1> hi ianm hire</h1>
+@extends('layouts.admin')
