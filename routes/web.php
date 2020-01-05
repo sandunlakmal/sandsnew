@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.admin');
 });
+
+
 
 Auth::routes();
 
@@ -28,3 +30,29 @@ return view('admin.index');
 });
 
 Route::resource('admin/users', 'AdminUsersController');
+
+
+// Route::group(['middleware'=>'admin'], function(){
+
+//     Route::get('/admin', function(){
+
+//         return view('admin.index');
+
+
+
+
+//     });
+Route::resource('admin/users', 'AdminUsersController',['names'=>[
+
+
+    'index'=>'admin.users.index',
+    'create'=>'admin.users.create',
+    'store'=>'admin.users.store',
+    'edit'=>'admin.users.edit'
+
+
+
+
+
+
+]]);
