@@ -69,12 +69,12 @@ class AdminUsersController extends Controller
 
 
     }
-//return redirect('/admin/users');
+
 
 $input ['password'] = bcrypt($request->password);
 User::create($input);
 
-
+return redirect('/admin/users');
 
 
 
@@ -99,7 +99,16 @@ User::create($input);
      */
     public function edit($id)
     {
-        //
+        $users = User::findOrFail($id);
+
+
+return view('admin.users.edite', compact('user'));
+
+
+
+
+
+
     }
 
     /**
