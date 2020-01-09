@@ -125,6 +125,8 @@ return view('admin.users.edit', compact('user','roles'));
     public function update(UserEditeRequest $request, $id)
     {
         //
+
+        
         $user = User::findOrFail($id);
         $input = $request->all();
         if($file = $request->file('photo_id')){
