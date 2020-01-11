@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.admin');
+    return view('welcome');
 });
 
 
@@ -29,7 +29,7 @@ return view('admin.index');
 
 });
 
-Route::resource('admin/users', 'AdminUsersController');
+//Route::resource('admin/users', 'AdminUsersController');
 
 
 // Route::group(['middleware'=>'admin'], function(){
@@ -42,6 +42,9 @@ Route::resource('admin/users', 'AdminUsersController');
 
 
 //     });
+
+Route::group(['middleware'=>'admin'], function(){
+
 Route::resource('admin/users', 'AdminUsersController',['names'=>[
 
 
@@ -50,9 +53,7 @@ Route::resource('admin/users', 'AdminUsersController',['names'=>[
     'store'=>'admin.users.store',
     'edit'=>'admin.users.edit'
 
-
-
-
-
-
 ]]);
+
+
+});
