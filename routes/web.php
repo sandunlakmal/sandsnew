@@ -43,6 +43,9 @@ return view('admin.index');
 
 //     });
 
+
+
+
 Route::group(['middleware'=>'admin'], function(){
 
 Route::resource('admin/users', 'AdminUsersController',['names'=>[
@@ -52,6 +55,20 @@ Route::resource('admin/users', 'AdminUsersController',['names'=>[
     'create'=>'admin.users.create',
     'store'=>'admin.users.store',
     'edit'=>'admin.users.edit'
+
+]]);
+
+
+Route::resource('admin/posts', 'AdminPostsController',['names'=>[
+
+    'index'=>'admin.posts.index',
+    'create'=>'admin.posts.create',
+    'store'=>'admin.posts.store',
+    'edit'=>'admin.posts.edit'
+
+
+
+
 
 ]]);
 
