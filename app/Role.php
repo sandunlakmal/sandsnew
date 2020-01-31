@@ -14,13 +14,7 @@ class Role extends Model
 
 
     ];
-
-    
-    
-    
-    
-    
-    
+ 
     public function role(){
 
 
